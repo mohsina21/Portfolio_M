@@ -80,13 +80,12 @@ const Navbar = ({ scrollToSection, refs }) => {
             damping: 17
           }}
         >
-          {/* Hover gradient overlay */}
+       
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-purple-500/50 to-pink-500/50 rounded-full opacity-0 group-hover:opacity-100"
             transition={{ duration: 0.3 }}
           />
           
-          {/* Shimmer effect */}
           <motion.div
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
             initial={{ x: "-100%" }}
