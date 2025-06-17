@@ -1,0 +1,51 @@
+
+import React from "react";
+import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from "react-icons/fa6";
+
+const Footer = () => {
+  return (
+    <footer className="bg-purple-900/30 backdrop-blur-md py-6 px-4 text-center text-sm text-purple-300 mt-10 shadow-inner shadow-purple-900/40">
+      <div className="flex justify-center gap-6 mb-4">
+        <a
+          href="mailto:mohsinaparveen1418@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors duration-300"
+        >
+          <FaEnvelope size={20} />
+        </a>
+        <a
+          href="https://github.com/mohsina21"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors duration-300"
+        >
+          <FaGithub size={20} />
+        </a>
+        <a
+          href="https://twitter.com/notmohsina"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors duration-300"
+        >
+          <FaXTwitter size={20} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/mohsina-parveen-577367203/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-white transition-colors duration-300"
+        >
+          <FaLinkedin size={20} />
+        </a>
+      </div>
+
+      <p className="text-xs sm:text-sm font-medium tracking-wide">
+        Made with 💜 by{" "}
+        <span className="text-purple-700">Mohsina</span> © 2025
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;
