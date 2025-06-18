@@ -40,15 +40,18 @@ function App() {
       />
 
       {/* Squares BG */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        <Squares
-          speed={0.5}
-          squareSize={20} // a bit smaller for mobile vibes
-          direction="diagonal"
-          borderColor="#271e37"
-          hoverFillColor="#222222"
-        />
-      </div>
+     {/* Squares Background - Fully Responsive */}
+<div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
+  <div className="w-full h-full">
+    <Squares
+      speed={0.5}
+      squareSize={window.innerWidth < 640 ? 16 : 24} // adaptive sizing
+      direction="diagonal"
+      borderColor="#271e37"
+      hoverFillColor="#222222"
+    />
+  </div>
+</div>
 
       {/* Sections */}
       <section
