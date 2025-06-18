@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import Hero from './Components/Hero.jsx';
 import About from './Components/About.jsx';
 import Squares from './Pages/Squares.jsx';
@@ -14,13 +14,23 @@ function App() {
   const techRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const [squareSize, setSquareSize] = useState(24);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setSquareSize(window.innerWidth < 640 ? 16 : 24);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const scrollToSection = (ref) => {
     ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col text-white overflow-x-hidden overflow-y-auto scroll-smooth">
+    <div className="relative min-h-screen w-full flex flex-col text-white overflow-x-hidden overflow-y-auto scroll-smooth scrollbar-hide">
 
       {/* Blurred Blobs for Background */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
@@ -40,18 +50,15 @@ function App() {
       />
 
       {/* Squares BG */}
-     {/* Squares Background - Fully Responsive */}
-<div className="absolute inset-0 -z-10 pointer-events-none w-full h-full">
-  <div className="w-full h-full">
-    <Squares
-      speed={0.5}
-      squareSize={window.innerWidth < 640 ? 16 : 24} // adaptive sizing
-      direction="diagonal"
-      borderColor="#271e37"
-      hoverFillColor="#222222"
-    />
-  </div>
-</div>
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <Squares
+          speed={0.5}
+          squareSize={squareSize}
+          direction="diagonal"
+          borderColor="#271e37"
+          hoverFillColor="#222222"
+        />
+      </div>
 
       {/* Sections */}
       <section

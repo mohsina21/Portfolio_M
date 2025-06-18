@@ -21,8 +21,8 @@ const Squares = ({
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
-      const displayWidth = canvas.offsetWidth;
-      const displayHeight = canvas.offsetHeight;
+      const displayWidth = window.innerWidth;
+      const displayHeight = window.innerHeight;
 
       canvas.width = displayWidth * dpr;
       canvas.height = displayHeight * dpr;
@@ -150,7 +150,10 @@ const Squares = ({
   return (
     <canvas
       ref={canvasRef}
-      className="w-full h-full border-none block bg-black touch-none"
+      width={window.innerWidth}
+      height={window.innerHeight}
+      className="fixed inset-0 w-screen h-screen border-none block bg-black touch-none"
+      style={{ left: 0, top: 0 }}
     ></canvas>
   );
 };
