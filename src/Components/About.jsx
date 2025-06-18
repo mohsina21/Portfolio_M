@@ -32,7 +32,7 @@ const About = () => {
         <div className="flex-1 text-center sm:text-left px-2 sm:p-6">
           <p className="text-base sm:text-lg leading-relaxed text-gray-100">
             Hi! I'm{" "}
-            <span className="font-bold text-violet-400">Mohsina Parveen</span>, a passionate
+            <span className="font-bold text-violet-400">Mohsina Parveen</span>, a 
             Front-End Developer and a dedicated student with a keen interest in crafting
             intuitive and visually appealing web experiences. I enjoy transforming ideas
             into interactive, user-friendly designs using technologies like HTML, CSS,
