@@ -4,6 +4,12 @@ import Tilt from "react-parallax-tilt";
 
 const projects = [
   {
+    img: "/InterviewD.png",
+    title: "InterviewD",
+    desc: "InterviewD is an AI-powered interview preparation platform that offers personalized mock interviews, feedback, and resources to help users ace their job interviews.",
+    url: "https://interviewd.vercel.app/",
+  },
+  {
     img: "/Flow4Life.png",
     title: "Flow4Life",
     desc: "Flow4Life is a smart blood donation platform with real-time alerts and location-based matching to help save lives faster.",

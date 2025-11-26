@@ -33,11 +33,11 @@ const About = () => {
           <p className="text-base sm:text-lg leading-relaxed text-gray-100">
             Hi! I'm{" "}
             <span className="font-bold text-violet-400">Mohsina Parveen</span>, a 
-            Front-End Developer and a dedicated student with a keen interest in crafting
-            intuitive and visually appealing web experiences. I enjoy transforming ideas
-            into interactive, user-friendly designs using technologies like HTML, CSS,
-            JavaScript, and React. I'm always eager to learn new tech and improve my skills.
-            Feel free to check out my work — let’s connect!
+            Front-End Developer and a dedicated student with a strong interest in both technical and non-technical roles.
+I love crafting intuitive, visually appealing web experiences using HTML, CSS, JavaScript, and React. Alongside my technical work, I also enjoy roles involving communication, operations, coordination, and problem-solving where I can contribute to smooth workflows and impactful outcomes.
+
+I’m passionate about transforming ideas into functional, user-friendly products, improving processes, and continuously learning new skills across design, development, and operations.
+Feel free to explore my work — I’d love to connect and collaborate!
           </p>
         </div>
       </div>
