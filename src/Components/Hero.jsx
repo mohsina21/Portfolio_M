@@ -1,75 +1,77 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import SocialLinks from "./SocialLinks";
+import { SOCIAL_MEDIA } from "../config/constants";
 
-const socialMedia = [
-  {
-    id: 1,
-    name: "GitHub",
-    icon: <FaGithub size={22} />,
-    url: "https://github.com/mohsina21",
-  },
-  {
-    id: 2,
-    name: "Twitter",
-    icon: <FaXTwitter size={22} />,
-    url: "https://twitter.com/notmohsina",
-  },
-  {
-    id: 3,
-    name: "LinkedIn",
-    icon: <FaLinkedin size={22} />,
-    url: "https://www.linkedin.com/in/mohsina-parveen-577367203/",
-  },
-];
-
-const Hero = () => {
+const Hero = ({ projectRef, scrollToSection }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center text-center text-white relative px-4 sm:px-6 overflow-hidden">
-      {/* Name + Title */}
-      <motion.h1
-        className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-wide drop-shadow-lg mb-2 sm:mb-3 font-orbitron"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        style={{
-          fontFamily: "Orbitron, sans-serif",
-          color: "#ffffff",
-          textShadow: "0 0 4px #a855f7, 0 0 8px #7e22ce",
-        }}
-      >
-        Mohsina Parveen
-      </motion.h1>
-
-      <motion.h2
-        className="text-base sm:text-lg md:text-2xl font-orbitron tracking-wider text-gray-300 mb-6 sm:mb-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.5 }}
-      >
-        {"<"}Frontend Developer {" />"}
-      </motion.h2>
-
-      {/* Social Icons */}
+      {/* Name with premium typography */}
       <motion.div
-        className="flex gap-4 sm:gap-6 mt-2 flex-wrap justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
+        initial={{ opacity: 0, y: -40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="space-y-3 sm:space-y-5"
       >
-        {socialMedia.map((item) => (
-          <a
-            key={item.id}
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-2 sm:p-3 border border-purple-400 rounded-xl 
-                       transition-transform hover:scale-110 hover:bg-purple-400 
-                       hover:text-black"
-          >
-            {item.icon}
-          </a>
-        ))}
+        <h1 className="text-5xl sm:text-6xl md:text-8xl font-extrabold tracking-tight mt-4 sm:mt-6"
+          style={{
+            fontFamily: "'Orbitron', 'Courier New', monospace",
+            background: "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            textShadow: "0 0 30px rgba(168, 85, 247, 0.3)",
+          }}
+        >
+          Mohsina Parveen
+        </h1>
+
+        <motion.p
+          className="text-xl sm:text-2xl md:text-3xl tracking-wider text-purple-300"
+          style={{ fontFamily: "'Courier New', 'Courier', monospace" }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3 }}
+        >
+          {"< "}
+          <span className="text-violet-400">Full-Stack Developer</span>
+          {" />"}
+        </motion.p>
+
+        <motion.p
+          className="text-sm sm:text-base md:text-lg text-gray-300 max-w-md mx-auto leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          Building beautiful, interactive experiences with modern web technologies
+        </motion.p>
+      </motion.div>
+
+      {/* Social Links */}
+      <div className="mt-10 sm:mt-12">
+        <SocialLinks links={SOCIAL_MEDIA} />
+      </div>
+
+      {/* CTA Button */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1 }}
+        className="mt-12 sm:mt-16"
+      >
+        <motion.button
+          onClick={() => scrollToSection?.(projectRef)}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="group relative px-8 py-3 sm:px-10 sm:py-4 rounded-full font-semibold
+                     bg-gradient-to-r from-purple-500 to-violet-600 text-white
+                     shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80
+                     transition-all duration-300 overflow-hidden"
+        >
+          <span className="relative z-10">Explore My Work</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-600 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </motion.button>
       </motion.div>
     </div>
   );

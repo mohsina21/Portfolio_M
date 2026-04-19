@@ -99,7 +99,7 @@ const Navbar = ({ scrollToSection, refs }) => {
 
       {/* Resume Button */}
       <motion.a
-        href="/Mohsina_NT.pdf" 
+        href="/Mohsina_resume.pdf" 
         download
         className="relative px-3 sm:px-4 py-2 sm:py-2.5 text-white rounded-xl text-sm font-semibold
           bg-purple-500/90 hover:bg-purple-600

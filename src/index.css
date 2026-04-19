@@ -1,23 +1,109 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global Styles */
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; 
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-.orbitron-custom {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
+/* Remove scrollbar across all browsers */
 body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;     /* Firefox */
 }
+
 body::-webkit-scrollbar {
   display: none;             /* Chrome, Safari, Opera */
+}
+
+/* Premium Typography */
+@font-face {
+  font-family: "Orbitron";
+  src: url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap");
+}
+
+/* Text Rendering Optimization */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Component Styles */
+@layer components {
+  /* Premium Buttons */
+  .btn-gradient {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300;
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    box-shadow: 0 4px 20px rgba(168, 85, 247, 0.3);
+  }
+
+  .btn-gradient:hover {
+    box-shadow: 0 8px 30px rgba(168, 85, 247, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Backdrop Blur Cards */
+  .card-glass {
+    @apply backdrop-blur-xl bg-gradient-to-br from-purple-900/40 via-black/20 to-violet-900/30;
+    @apply rounded-3xl border border-purple-500/40 shadow-2xl;
+  }
+
+  .card-glass:hover {
+    @apply border-violet-400/60 shadow-lg;
+    transition: all 0.5s ease;
+  }
+
+  /* Gradient Text */
+  .gradient-text {
+    background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Enhanced Link Styles */
+  a {
+    @apply transition-colors duration-300;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-offset-2 outline-purple-500;
+  }
+
+  /* Section Spacing */
+  section {
+    @apply scroll-mt-20;
+  }
+}
+
+/* Custom Scrollbar for Firefox (minimal) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(168, 85, 247, 0.5) transparent;
+}
+
+/* Utility: Hide scrollbar but allow scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
